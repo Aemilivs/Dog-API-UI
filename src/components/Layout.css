@@ -1,0 +1,36 @@
+body {
+    height: 100%;
+}
+
+header {
+    grid-column: 2/2;
+}
+
+.layout {
+    display: grid;
+    grid-template-columns: minmax(max-content, 1fr) 4fr;
+    grid-template-rows: minmax(max-content, 2fr) 6fr 2fr;
+    grid-gap: 1em;
+    align-items: center;
+    height: calc(100vh - 10px);
+}
+
+.endpoint {
+    grid-column-start: 2;
+    display: grid;
+    grid-gap: 1em;
+}
+
+.endpoints {
+    grid-row: 2/3;
+}
+
+.parameters {
+    grid-column-start: 1;
+    grid-row-start: 1;
+}
+
+.client {
+    grid-column-start: 1;
+    grid-row-start: 2;
+}
