@@ -5,9 +5,9 @@ export class ListAllBreeds extends Component {
 
   render() {
     return (
-      <div>
+      <div class="endpoint">
+        <h2>List all breeds</h2>
         <div class="client">
-          <h1>List all breeds</h1>
           <p>This page is a test of router properties.</p>
         </div>
       </div>

@@ -8,6 +8,7 @@ header {
 
 .layout {
     display: grid;
+    margin: 2em;
     grid-template-columns: minmax(max-content, 1fr) 4fr;
     grid-template-rows: minmax(max-content, 2fr) 6fr 2fr;
     grid-gap: 1em;
@@ -16,9 +17,16 @@ header {
 }
 
 .endpoint {
-    grid-column-start: 2;
     display: grid;
+    grid-template-rows: min-content min-content auto;
+    grid-column-start: 2;
+    grid-row-start: 2;
     grid-gap: 1em;
+    height: calc(80vh - 10px);
+}
+
+.endpoint h2 {
+    grid-row: 1/2;
 }
 
 .endpoints {
@@ -27,10 +35,10 @@ header {
 
 .parameters {
     grid-column-start: 1;
-    grid-row-start: 1;
+    grid-row-start: 2;
 }
 
 .client {
     grid-column-start: 1;
-    grid-row-start: 2;
+    grid-row-start: 3;
 }

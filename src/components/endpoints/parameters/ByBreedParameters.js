@@ -6,19 +6,12 @@ export class ByBreedParameters extends Component {
 
     render() {
         return (
-            <div>
+            <div class="endpoint">
+                <h2>Browse By Breed</h2>
                 <div class="parameters">
-                    <ul>
-                        <li>
-                            <NavLink tag={Link} to="/by-breed/list">List</NavLink>
-                        </li>
-                        <li>
-                            <NavLink tag={Link} to="/by-breed/image">Image</NavLink>
-                        </li>
-                        <li>
-                            <NavLink tag={Link} to="/by-breed/images">Images</NavLink>
-                        </li>
-                    </ul>
+                    <NavLink to="/by-breed/list">List</NavLink>
+                    <NavLink to="/by-breed/image">Image</NavLink>
+                    <NavLink to="/by-breed/images">Images</NavLink>
                 </div>
                 <div class="client">
                     {this.props.children}

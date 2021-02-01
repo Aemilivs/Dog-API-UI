@@ -6,9 +6,7 @@ export class ListSubBreeds extends Component {
     render() {
         return (
             <div>
-                <p>
-                    Hoi list!
-                </p>
+                <p>Fetch list of sub-breeds.</p>
             </div>
         );
     }

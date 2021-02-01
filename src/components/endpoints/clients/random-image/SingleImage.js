@@ -6,9 +6,7 @@ export class SingleImage extends Component {
     render() {
         return (
             <div>
-                <p>
-                    Hoi!
-                </p>
+                <p>Fetch a single image.</p>
             </div>
         );
     }

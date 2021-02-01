@@ -5,10 +5,11 @@ export class BrowseBreedList extends Component {
 
   render() {
     return (
-      <div>
-        <p>
-          This is a browser of breeds.
-        </p>
+      <div class="endpoint">
+        <h2>Browse Breeds</h2>
+        <div class="client">
+          <p>This is a browser of breeds.</p>
+        </div>
       </div>
     );
   }

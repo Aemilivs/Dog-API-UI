@@ -5,19 +5,22 @@ export class Home extends Component {
 
   render() {
     return (
-      <div>
-        <p>This is a proof of knowledge for the subject Web Design and Development.</p>
-        <span>This application is a UI client for <a href="https://dog.ceo/dog-api/">Dog API</a>.</span>
-        <span>
-          It is built using React and includes usage of:
-        </span>
+      <div class="endpoint">
+        <h2>Home</h2>
+        <div>
+          <p>This application is a proof of knowledge for the subject Web Design and Development.</p>
+          <p>It is a UI client for <a href="https://dog.ceo/dog-api/">Dog API</a>.</p>
+          <span>
+            It is built using <a href="https://reactjs.org/">React</a> and includes usage of:
         <ul>
-          <li>CSS3 Grid</li>
-          <li>CSS3 Flex</li>
-          <li>Transitions</li>
-          <li>SVG</li>
-          <li>And more!</li>
-        </ul>
+              <li>CSS3 Grid</li>
+              <li>CSS3 Flex</li>
+              <li>Transitions</li>
+              <li>SVG</li>
+              <li>And more!</li>
+            </ul>
+          </span>
+        </div>
       </div>
     );
   }

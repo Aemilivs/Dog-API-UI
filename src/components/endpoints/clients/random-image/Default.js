@@ -6,9 +6,7 @@ export class Default extends Component {
     render() {
         return (
             <div>
-                <p>
-                    Hoi default!
-                </p>
+                <h3>Please select parameter of the endpoint to use.</h3>
             </div>
         );
     }

@@ -6,9 +6,7 @@ export class MultipleImages extends Component {
     render() {
         return (
             <div>
-                <p>
-                    Hoi!
-                </p>
+                <p>Fetch multiple images.</p>
             </div>
         );
     }

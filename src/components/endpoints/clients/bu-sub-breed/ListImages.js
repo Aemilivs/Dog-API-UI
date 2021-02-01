@@ -6,9 +6,7 @@ export class ListImages extends Component {
     render() {
         return (
             <div>
-                <p>
-                    Hoi list!
-                </p>
+                <p>Fetch list of images.</p>
             </div>
         );
     }

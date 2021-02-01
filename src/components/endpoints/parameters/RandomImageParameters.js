@@ -6,19 +6,14 @@ export class RandomImageParameters extends Component {
 
     render() {
         return (
-            <div>
+            <div class="endpoint">
+                <h2>Random Image</h2>
                 <div class="parameters">
-                    <ul>
-                        <li>
-                            <NavLink tag={Link} to="/random/image">Image</NavLink>
-                        </li>
-                        <li>
-                            <NavLink tag={Link} to="/random/images">Images</NavLink>
-                        </li>
-                    </ul>
-                </div>
-                <div class="client">
-                    {this.props.children}
+                    <NavLink to="/random/image">Image</NavLink>
+                    <NavLink to="/random/images">Images</NavLink>
+                    <div class="client">
+                        {this.props.children}
+                    </div>
                 </div>
             </div>
         );

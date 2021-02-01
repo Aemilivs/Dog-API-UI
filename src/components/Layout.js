@@ -11,7 +11,7 @@ export class Layout extends Component {
       <div class="layout">
         <NavigationMenu />
         <Header />
-        <div class="endpoint">
+        <div>
           {this.props.children}
         </div>
       </div>
