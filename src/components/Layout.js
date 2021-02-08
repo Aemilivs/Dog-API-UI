@@ -6,12 +6,12 @@ import "./Layout.css";
 export class Layout extends Component {
   static displayName = Layout.name;
 
-  render () {
+  render() {
     return (
       <div class="layout">
         <NavigationMenu />
-        <Header />
-        <div>
+        <div class="endpoint">
+          <Header />
           {this.props.children}
         </div>
       </div>

@@ -5,23 +5,24 @@ export class Home extends Component {
 
   render() {
     return (
-      <div class="endpoint">
+      <div>
         <h2>Home</h2>
         <div>
           <p>This application is a proof of knowledge for the subject Web Design and Development.</p>
-          <p>It is a UI client for <a href="https://dog.ceo/dog-api/">Dog API</a>.</p>
+          <p>The projects demonstrates a UI client which was designed as a visual representation of a public API service called <a href="https://dog.ceo/dog-api/">Dog API</a>.</p>
+          <p>This API service represents a big collection of open source dog pictures and has a few endpoints to search for an image using different parameters.</p>
           <span>
-            It is built using <a href="https://reactjs.org/">React</a> and includes usage of:
-        <ul>
+            This UI client was built using the following technologies:
+            <ul>
+              <li><a href="https://reactjs.org">React</a></li>
               <li>CSS3 Grid</li>
               <li>CSS3 Flex</li>
               <li>Transitions</li>
               <li>SVG</li>
-              <li>And more!</li>
             </ul>
           </span>
         </div>
-      </div>
+        </div>
     );
   }
 }

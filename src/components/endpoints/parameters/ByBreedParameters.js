@@ -6,7 +6,7 @@ export class ByBreedParameters extends Component {
 
     render() {
         return (
-            <div class="endpoint">
+            <div class="endpoint-container">
                 <h2>Browse By Breed</h2>
                 <div class="parameters">
                     <NavLink to="/by-breed/list">List</NavLink>

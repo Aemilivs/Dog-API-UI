@@ -22,26 +22,11 @@ export class NavigationMenu extends Component {
   render() {
     return (
       <div class="endpoints">
-        <ul>
-          <li>
-            <NavLink to="/">Home</NavLink>
-          </li>
-          <li>
-            <NavLink to="/browse-breed-list">Browse breed list</NavLink>
-          </li>
-          <li>
-            <NavLink to="/by-breed">By breed</NavLink>
-          </li>
-          <li>
-            <NavLink to="/by-sub-breed">By sub-breed</NavLink>
-          </li>
-          <li>
-            <NavLink to="/list-all-breeds">List all breeds</NavLink>
-          </li>
-          <li>
-            <NavLink to="/random">Random image</NavLink>
-          </li>
-        </ul>
+        <NavLink to="/">Home</NavLink>
+        <NavLink to="/by-breed">Search by breed</NavLink>
+        <NavLink to="/by-sub-breed">Search by sub-breed</NavLink>
+        <NavLink to="/list-all-breeds">List all breeds</NavLink>
+        <NavLink to="/random">Fetch random image</NavLink>
       </div>
     );
   }
