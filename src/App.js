@@ -7,8 +7,6 @@ import { BySubBreed } from "./components/endpoints/BySubBreed";
 import { ListAllBreeds } from "./components/endpoints/ListAllBreeds";
 import { RandomImage } from "./components/endpoints/RandomImage";
 
-import './custom.css'
-
 export default class App extends Component {
   static displayName = App.name;
 

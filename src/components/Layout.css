@@ -1,22 +1,82 @@
+:root {
+    --scrollbar-color-main: rgba(00, 00, 00, .3);
+    --scrollbar-color-secondary: rgba(ff, ff, ff .99);
+}
+
 body {
     height: 100%;
+    /* Firefox */
+    scrollbar-width: thin;
+    scrollbar-color: var(--scrollbar-color-main) var(--scrollbar-color-secondary);
 }
+
+/* The rest of browsers */
+.response-container::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+.response-container::-webkit-scrollbar-track {
+    background: var(--scrollbar-color-secondary);
+  }
+  
+.response-container::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbar-color-main);
+    border-radius: 20px;
+    border: 3px solid var(--scrollbar-color-secondary);
+  }
 
 .layout {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin: 2em;
+    justify-content: center;
+    height: 100vh;
+}
+
+.bar {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
     align-items: center;
-    height: calc(90vh - 10px);
+    justify-content: center;
+    
+    background-color: antiquewhite;
+    margin-left: 2em;
+}
+
+.endpoints {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.endpoints a {
+    margin: 1em;
+    color: gray;
+    width: 200px;
+}
+
+.endpoints a:hover {
+    color: darkgray;
+    background-color: bisque;
+    text-decoration: none; 
+}
+
+.endpoints a:focus {
+    outline: none;
+}
+
+.endpoints a:active {
+    color: black;
 }
 
 .endpoint {
     display: grid;
-    grid-template-rows: min-content min-content auto;
+    grid-template-rows: max-content max-content auto;
     grid-column-gap: 2em;
     height: calc(80vh - 10px);
     margin-left: 2em;
+    width: 90%;
 }
 
 .endpoint h1 {
@@ -28,15 +88,6 @@ body {
     row-gap: 1em;
 }
 
-.endpoints {
-    display: flex;
-    flex-direction: column;
-}
-
-.endpoints a {
-    margin: 1em;
-}
-
 .parameters {
     display: flex;
     grid-column-start: 1;
@@ -45,12 +96,60 @@ body {
 }
 
 .parameters a {
+    color: gray;
+    background-color: antiquewhite;
+    width: 200px;
     padding: 5px;
+    text-align: center;
+}
+
+.parameters a:hover {
+    color: darkgray;
+    background-color: bisque;
+    text-decoration: none; 
+}
+
+.parameters a:focus {
+    outline: none;
 }
 
 .client {
     grid-column-start: 1;
     grid-row-start: 3;
+    display: flex;
+    flex-direction: column;
+    height: 70vh;
+
+}
+
+.client button {
+    width: max-content;
+}
+
+.response-container {
+    /* layout */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 90%;
+    overflow-y: scroll;
+    justify-content: center;
+
+    /* cosmetic */
+    margin-top: 2em;
+    padding: 1em;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .3);
+}
+
+
+.response-container div {
+    width: 8em;
+}
+
+.response-container img {
+    width: 20vh
 }
 
 @media (max-width: 600px) {
@@ -58,14 +157,31 @@ body {
         font-size: small;
     }
 
-    .endpoints {
+    .layout {
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    .bar {
+        width: 100%;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         margin-bottom: 1em;
+        margin-left: unset;
+        height: min-content;
     }
 
-    .endpoints a {
+    .bar img {
+        justify-self: left;
+    }
+
+    .endpoints {
+        margin: unset;
+        height: min-content;
+    }
+
+    .bar a {
         padding: 5px;
         margin: 0;
         min-width: 50%;
@@ -74,4 +190,10 @@ body {
     .endpoint {
         margin-left: 0%;
     }
+
+    .response-container {
+        height: 400px;
+        overflow-y: auto;
+    }
+    
 }
