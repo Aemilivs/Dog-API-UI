@@ -51,6 +51,10 @@ body {
     background-color: antiquewhite;
 }
 
+.bar img {
+    width: 150px;
+}
+
 .endpoints {
     display: flex;
     flex-direction: column;

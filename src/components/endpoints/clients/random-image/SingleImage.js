@@ -14,6 +14,9 @@ export class SingleImage extends Component {
         };
       }
       
+    /**
+     * Make a call to the Dog API to fetch a random image of a dog after component is mounted.
+     */
     async componentDidMount() {
         try {
             if(this.state.isLoading)
@@ -37,7 +40,8 @@ export class SingleImage extends Component {
         } catch (error) {
             this.setState({
                     isLoading: false,
-                    isFailed: true
+                    isFailed: true,
+                    errorMessage: "Something went wrong. Please try again."
                 }
             );
         }
@@ -49,7 +53,9 @@ export class SingleImage extends Component {
                 <h2>Fetch a single random image</h2>
                 <div class="client">
                     {this.state.isFailed &&
-                        <span>Failed!</span>
+                        <div className="error-message">
+                            {this.state.errorMessage}
+                        </div>
                     }
                     {this.state.image !== null &&
                         <div class="response-container">
