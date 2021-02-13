@@ -7,10 +7,10 @@ export class RandomImageParameters extends Component {
     render() {
         return (
             <div class="endpoint-container">
-                <h2>Random Image</h2>
+                <h2>Show random images</h2>
                 <div class="parameters">
-                    <NavLink to="/random/image">Image</NavLink>
-                    <NavLink to="/random/images">Images</NavLink>
+                    <NavLink to="/random/image">Show a random image</NavLink>
+                    <NavLink to="/random/images">Show random images</NavLink>
                 </div>
                 <div class="client">
                     {this.props.children}

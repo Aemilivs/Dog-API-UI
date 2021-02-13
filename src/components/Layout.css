@@ -1,82 +1,104 @@
 :root {
     --scrollbar-color-main: rgba(00, 00, 00, .3);
     --scrollbar-color-secondary: rgba(ff, ff, ff .99);
+    --background-hover-color: rgb(243, 212, 174);
 }
 
 body {
     height: 100%;
-    /* Firefox */
+    /* Scrollbar styles for Firefox */
     scrollbar-width: thin;
     scrollbar-color: var(--scrollbar-color-main) var(--scrollbar-color-secondary);
 }
 
-/* The rest of browsers */
+/* Scrollbar styles for the rest of browsers */
 .response-container::-webkit-scrollbar {
     width: 12px;
   }
   
+/* Scrollbar styles for the rest of browsers */
 .response-container::-webkit-scrollbar-track {
     background: var(--scrollbar-color-secondary);
   }
   
+/* Scrollbar styles for the rest of browsers */  
 .response-container::-webkit-scrollbar-thumb {
-    background-color: var(--scrollbar-color-main);
     border-radius: 20px;
     border: 3px solid var(--scrollbar-color-secondary);
+    
+    background-color: var(--scrollbar-color-main);
   }
 
 .layout {
     display: flex;
+
     justify-content: center;
+    
     height: 100vh;
 }
 
 .bar {
     display: flex;
     flex-direction: column;
-    height: 100%;
+
     align-items: center;
     justify-content: center;
     
-    background-color: antiquewhite;
+    height: 100%;
+    
     margin-left: 2em;
+
+    background-color: antiquewhite;
 }
 
 .endpoints {
     display: flex;
     flex-direction: column;
-    height: 100%;
+
     align-items: center;
     justify-content: center;
+
+    width: 200px;
+    height: 100%;
 }
 
 .endpoints a {
-    margin: 1em;
-    color: gray;
-    width: 200px;
+    width: 100%;
+    height: 3em;
+    
+    padding-left: 1rem;
+    
+    font-weight: bold;
+
+    color: black;
+    
+    transition: background-color 0.5s;
 }
 
 .endpoints a:hover {
-    color: darkgray;
-    background-color: bisque;
     text-decoration: none; 
+
+    background-color: var(--background-hover-color);
 }
 
 .endpoints a:focus {
     outline: none;
 }
 
-.endpoints a:active {
-    color: black;
-}
-
 .endpoint {
     display: grid;
     grid-template-rows: max-content max-content auto;
     grid-column-gap: 2em;
-    height: calc(80vh - 10px);
-    margin-left: 2em;
+
     width: 90%;
+    
+    margin-left: 2em;
+
+    overflow-y: auto;
+}
+
+.endpoint header {
+    margin-top: 2em;
 }
 
 .endpoint h1 {
@@ -86,27 +108,42 @@ body {
 .endpoint-container {
     display: grid;
     row-gap: 1em;
+    
+    animation: fadeIn ease 0.5s;
+}
+
+.home-container {
+    animation: fadeIn ease 0.5s;
 }
 
 .parameters {
     display: flex;
+
     grid-column-start: 1;
     grid-row-start: 2;
     column-gap: 2em;
 }
 
 .parameters a {
-    color: gray;
-    background-color: antiquewhite;
     width: 200px;
+
     padding: 5px;
+
     text-align: center;
+
+    color: black;
+
+    font-weight: bold;
+
+    background-color: antiquewhite;
+    
+    transition: background-color 0.5s;
 }
 
 .parameters a:hover {
-    color: darkgray;
-    background-color: bisque;
     text-decoration: none; 
+
+    background-color: var(--background-hover-color);
 }
 
 .parameters a:focus {
@@ -114,32 +151,73 @@ body {
 }
 
 .client {
-    grid-column-start: 1;
-    grid-row-start: 3;
     display: flex;
     flex-direction: column;
-    height: 70vh;
 
+    grid-column-start: 1;
+    grid-row-start: 3;
 }
 
 .client button {
     width: max-content;
 }
 
+button {
+    padding: 8px;
+    
+    border-radius: 10px;
+    
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .3);
+    
+    background-color: white;
+
+    transition: background-color 0.5s;
+}
+
+button:hover {
+    background-color: var(--background-hover-color);
+}
+
+button:focus {
+    outline: none;
+}
+
+input, label {
+    margin-right: 1em;
+}
+
+input[type="number"] {
+    width: 3rem;
+}
+
+.error-message {
+    width: max-content;
+    
+    align-self: center;
+    text-align: center;
+    
+    margin: 1em;
+    padding: 1em;
+    
+    border: 1px solid red;
+    
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .3);
+    
+    animation: fadeIn 1s ease;
+}
+
 .response-container {
-    /* layout */
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    width: 90%;
-    overflow-y: scroll;
-    justify-content: center;
 
-    /* cosmetic */
-    margin-top: 2em;
+    margin: 2em;
     padding: 1em;
-    background-color: white;
+    
     border-radius: 20px;
+    
+    background-color: white;
+    
     box-shadow: 0 2px 4px rgba(0, 0, 0, .3);
 }
 
@@ -149,7 +227,17 @@ body {
 }
 
 .response-container img {
-    width: 20vh
+    width: 100%;
+    height: auto;
+
+    padding: 4em;
+    
+    border-radius: 20px;
+}
+
+@keyframes fadeIn {
+    0% { opacity:0; }
+    100% { opacity:1; }
 }
 
 @media (max-width: 600px) {
@@ -159,17 +247,20 @@ body {
 
     .layout {
         flex-wrap: wrap;
+
         width: 100%;
     }
 
     .bar {
-        width: 100%;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
+        
+        width: 100%;
+        height: min-content;
+        
         margin-bottom: 1em;
         margin-left: unset;
-        height: min-content;
     }
 
     .bar img {
@@ -177,23 +268,45 @@ body {
     }
 
     .endpoints {
-        margin: unset;
         height: min-content;
+
+        margin: unset;
     }
 
     .bar a {
+        min-width: 50%;
+
         padding: 5px;
         margin: 0;
-        min-width: 50%;
     }
 
     .endpoint {
+        height: min-content;
+
         margin-left: 0%;
+        
+        overflow-y: unset;
+    }
+
+    .parameters {
+        flex-direction: column;        
+    }
+
+    .parameters a {
+        width: 100%;
     }
 
     .response-container {
-        height: 400px;
-        overflow-y: auto;
+        height: min-content;
+
+        overflow-y: unset;
     }
     
+    .response-container div {
+        height: 100%;
+
+        margin-bottom: 2em;
+
+        overflow-y: unset;
+    }
 }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
-import DogLogo from '../svgs/Dog.svg';
+import DogLogo from '../pictures/Dog.svg';
 
 export class NavigationMenu extends Component {
   static displayName = NavigationMenu.name;
@@ -26,10 +26,9 @@ export class NavigationMenu extends Component {
         <img src={DogLogo} alt="Dog Logo" width="150" />
         <div class="endpoints">
           <NavLink to="/">Home</NavLink>
-          <NavLink to="/by-breed">Search by breed</NavLink>
-          <NavLink to="/by-sub-breed">Search by sub-breed</NavLink>
           <NavLink to="/list-all-breeds">List all breeds</NavLink>
-          <NavLink to="/random">Fetch random image</NavLink>
+          <NavLink to="/by-breed">Search by breed</NavLink>
+          <NavLink to="/random">Show random images</NavLink>
         </div>
       </div>
     );

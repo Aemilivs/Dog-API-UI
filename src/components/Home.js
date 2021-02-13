@@ -5,7 +5,7 @@ export class Home extends Component {
 
   render() {
     return (
-      <div>
+      <div class="home-container">
         <h2>Home</h2>
         <div>
           <p>This application is a proof of knowledge for the subject Web Design and Development.</p>
