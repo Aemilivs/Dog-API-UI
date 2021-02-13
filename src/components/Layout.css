@@ -67,11 +67,14 @@ body {
 }
 
 .endpoints a {
+    display: flex;
     width: 100%;
     height: 3em;
     
-    padding-left: 1rem;
+    align-items: center;
     
+    padding-left: 1rem;
+
     font-weight: bold;
 
     color: black;
